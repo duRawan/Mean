@@ -2,16 +2,14 @@
   "name": "cars_and_cats_Ex",
   "version": "1.0.0",
   "description": "",
-<<<<<<< HEAD
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-=======
+    "start": "node server.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> de87d3f3880fa1061a605effb778efe3b7dd7b6d
+
   },
   "keywords": [],
   "author": "",
@@ -20,4 +18,5 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1"
   }
+}
 }

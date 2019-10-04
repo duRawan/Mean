@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cars and cats</title>
+   <link rel="stylesheet" href="/stylesheets/style2.css">
+</head>
+
+<body>
+    <div id="container">
+
+        
+        <% for (var c of cat) { %>
+        <h1><img src="/images/cat<%=c.num%>.png" alt="image of a cat" class="img">
+            Details Page for <%= c.name %>
+        </h1>
+        <li>Favorit food: <%= c.food %></li>
+        <li>Age: <%= c.age %> </li>
+        <li>Sleeping Spot: <%= c.sleep_spot %></li>
+       <hr>
+        <% } %>
+    </div>
+</body>
+
+</html>

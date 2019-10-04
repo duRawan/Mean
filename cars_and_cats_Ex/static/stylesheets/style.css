@@ -52,3 +52,6 @@ h2{
     color:rgb(71, 92, 164);
     text-shadow: 1px 1px gray;
 }
+img {
+    border-radius: 50%;
+  }
