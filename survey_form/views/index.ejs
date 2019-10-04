@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="center">
+        <form action="/result" method="POST">
+            <p>Your Name: <br><input type="text" name="Name" id=""></p>
+            <p>Dojo Location: <br>
+                <select name="DL" id="">
+                    <option value="Riyadh">Riyadh</option>
+                    <option value="Jeddah">Jeddah</option>
+                    <option value="Dammam">Dammam</option>
+                </select>
+            </p>
+            <p>Favorit Language:<br>
+                <select name="FL" id="">
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="Python">Python</option>
+                </select>
+            </p>
+            <p>Comment (optional):
+            </p>
+            <textarea name="Comment" id="" cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+    </div>
+</body>
+
+</html>

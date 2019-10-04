@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>result</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div id="container">
+    <div id="center_">
+    <h1>Submitted Information:</h1>
+    
+    <p>Your Name: <%=result.Name%></p>
+    <p>Dojo Location: <%= result.DL%></p>
+    <p>Favorite Language: <%= result.FL%></p>
+    <p>Comment: <%= result.Comment%></p>
+    <form action="/" method="GET">
+    <input type="submit" value="Go Back">
+    </form>
+    </div>
+    </div>
+</body>
+</html>
