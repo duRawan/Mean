@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var socket = io.connect();
+            $('#submit').submit(function () {
+                socket.emit("posting_form", {
+                    name: $("#name").val(),
+                    location: $("#DL").val(),
+                    language: $("#FL").val(),
+                    comment: $("#comment").val()
+                });
+            });
+            socket.on('updated_message', function (data) {//writing on the html page
+                $("#message").html("You emitted the following information to the server: " + JSON.stringify(data.response))
+            });
+            socket.on('random_number', function (data) {//writing on the html page
+                $("#rand_num").html("Your lucky number emitted by the server is: " + JSON.stringify(data.random))
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="message"></div>
+        <div id="rand_num"></div>
+        <div id="center">
+            <form action="/" id="submit" method="POST">
+                <p>Your Name: <br><input type="text" name="name" id="name"></p>
+                <p>Dojo Location: <br>
+                    <select name="DL" id="DL">
+                        <option value="Riyadh">Riyadh</option>
+                        <option value="Jeddah">Jeddah</option>
+                        <option value="Dammam">Dammam</option>
+                    </select>
+                </p>
+                <p>Favorit Language:<br>
+                    <select name="FL" id="FL">
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </p>
+                <p>Comment (optional):
+                </p>
+                <textarea name="Comment" id="comment" cols="30" rows="10"></textarea>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
