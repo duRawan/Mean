@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Qoutes</title>
+    
+</head>
+
+<body>
+    <div id="container">
+        <div id="center_">
+            <h2>Here is the awesome quotes! </h2>
+            <% for (var i in quotes) { %>
+            <h4>"<%= quotes[i].quote %>"</h4>
+            <p>- <%= quotes[i].name %> at <%= quotes[i].createdAt %></p>
+            <hr>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
