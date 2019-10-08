@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+        <div id="container">
+    	<h1>Edit An Owl</h1>
+	<form action="/Owl/edit_submit/<%= owl_one.id %>" method="post" class="form-group">
+		<label>Name: </label>
+		<input type="text" name="name" class="form-control" value="<%= owl_one.name %>"></input>
+		<label>Personality: </label>
+		<input type="text" name="personality" class="form-control" value="<%= owl_one.personality %>"></input>
+		<label>Age: </label>
+		<input type="number" name="age" class="form-control" value="<%= owl_one.age %>"></input>
+		<label>Favorite Food: </label>
+		<input type="text" name="food" class="form-control" value="<%= owl_one.food %>"></input>
+		<input type="submit" class="btn btn-default" value="Update"></input>
+	</form>
+	<form action="/" method="get">
+		<button style="margin-top: 30px;" class="btn btn-default">Back to Dashboard</button>
+    </form>
+    </div>
+</body>
+</html>

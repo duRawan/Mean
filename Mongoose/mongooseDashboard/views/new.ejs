@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>new owl</title>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Add A New Owl</h2>
+        <form action="/Owls" method="POST" class="form-group">
+            <label>Name: </label>
+            <input type="text" name="name" class="form-control"></input>
+            <label>Personality: </label>
+            <input type="text" name="personality" class="form-control"></input>
+            <label>Age: </label>
+            <input type="number" name="age" class="form-control"></input>
+            <label>Favorite Food: </label>
+            <input type="text" name="food" class="form-control"></input>
+            <label>id: </label>
+            <input type="number" name="id" class="form-control"></input>
+            <input type="submit" class="btn btn-default" value="Add"></input>
+        </form>
+        <form action="/" method="get">
+            <button style="margin-top: 30px;" class="btn btn-default">Back to Dashboard</button>
+        </form>
+    </div>
+</body>
+
+</html>

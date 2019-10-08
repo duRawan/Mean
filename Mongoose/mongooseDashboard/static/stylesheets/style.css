@@ -1,0 +1,53 @@
+#Owls {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Owls td,
+#Owls th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#Owls tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#Owls tr:hover {
+    background-color: #ddd;
+}
+
+#Owls th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:#7A6083;
+    color: white;
+}
+img{
+    border-radius: 50%;
+    width:100px;
+}
+.img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#container{
+    width: 700px;
+    background-color: lightgray;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+    
+}
+p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 24px;   
+}
+h1{
+    text-decoration: underline;
+}

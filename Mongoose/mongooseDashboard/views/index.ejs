@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mongoose Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Owls</h1>
+        <table border="2" id="Owls">
+            <tr>
+                <th>Owls</th>
+                <th>Action</th>
+            </tr>
+            
+            <% for (var i in owl_all) { %>
+                <tr>
+            <td> <%= owl_all[i].name %></td>
+            <td>
+                
+                <a href="/Owl/<%= owl_all[i].id %>">Show</a>
+                <a href="/Owl/edit/<%= owl_all[i].id %>">Edit</a>
+                <a href="/Owl/destroy/<%= owl_all[i].id %>">delete</a></td>
+                </tr>
+            <% } %>
+            
+        </table>
+        <br>
+        <a href="/Owls/new" class="btn btn-default">Add New Owl</a>
+    </div>
+
+</body>
+
+</html>
