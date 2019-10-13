@@ -1,0 +1,3 @@
+Mac
+Start MongoDB Server: (open a terminal window and enter the following): sudo mongod
+Open Mongo Terminal: (open a terminal window and enter the following): mongo
