@@ -12,16 +12,20 @@ export class AppComponent implements OnInit {
 
   // ngOnInit will run when the component is initialized, after the constructor method.
   tasks = [];
-  Onetask=[];
+  Onetask = [];
+  newTask: any;
+  editTask: any;
+  editTog:Boolean;
   ngOnInit() {
     //this.getTasksFromService();
-
+    this.newTask = { title: "", description: "" }
   }
   getTasksFromService() {
     let observable = this._httpService.getTasks();
     observable.subscribe(data => {
       console.log("Got your our tasks", data)
       this.tasks = data['task'];
+      this.editTog=false;
       //console.log(this.tasks)
     });
   }
@@ -34,11 +38,32 @@ export class AppComponent implements OnInit {
       console.log(this.Onetask)
     });
   }
-  onButtonClickParam(num: Number): void {
-    console.log(`Click event is working with num param: ${num}`);
-    // call the service's method to post the data, but make sure the data is bundled up in an object!
-    let observable = this._httpService.postToServer({ data: num });
-    observable.subscribe(data => console.log("Got our data!", data));
-  }
 
+  onSubmit() {
+    // Code to send off the form data (this.newTask) to the Service
+    // ...
+    // Reset this.newTask to a new, clean object.
+    let observable = this._httpService.addTask(this.newTask );
+    observable.subscribe(data => {
+      console.log("NewTask!", data);
+      this.newTask = { title: "", description: "" }
+      this.getTasksFromService();
+    });
+  }
+  editForm(task){
+    this.editTask = {_id: task._id, title: task.title, description: task.description};
+    this.editTog=true;
+  }
+  onEdit(){
+    let observable = this._httpService.editTask(this.editTask );
+    observable.subscribe(data => {
+      console.log("EditTask!", data);
+      this.getTasksFromService();})
+  }
+  onDelete(task){
+    let observable = this._httpService.deleteTask(task );
+    observable.subscribe(data => {
+      console.log("DeleteTask!", data);
+      this.getTasksFromService();})
+  }
 }
